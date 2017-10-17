@@ -1,0 +1,7 @@
+body {
+  margin: 40px 0;
+}
+.text-danger {
+    color: #ff0c0c;
+    font-size: 14px;
+}

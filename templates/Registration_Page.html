@@ -1,0 +1,107 @@
+<div class="col-md-6 col-md-offset-3">
+    <h3>{{title}}</h3>
+    <br>
+    <form name="signupform" role="form" novalidate>
+        <div class="form-group">
+            <label for="firstname">FirstName <span class="text-danger">*</span></label>
+            <input type="text" name="firstname" class="form-control" ng-model="formObj.firstname" ng-minlength="3" ng-maxlength="10" placeholder="firstname" required />
+            <!-- validations -->
+            <p ng-show="signupform.firstname.$dirty && signupform.firstname.$error.required" class="help-block text-danger">Firstname must be required</p>
+            <p ng-show="signupform.firstname.$error.minlength" class="help-block text-danger"> Not lessthan 3 </p>
+            <p ng-show="signupform.firstname.$error.maxlength" class="help-block text-danger">Not Morethan 20</p>
+        </div>
+        <div class="form-group">
+            <label for="middlename">MiddleName <span class="text-danger">*</span></label>
+            <input type="text" name="middlename" class="form-control" ng-model="formObj.middlename" ng-minlength="3" ng-maxlength="10" placeholder="middlename" required />
+            <!-- validations -->
+            <p ng-show="signupform.middlename.$dirty && signupform.middlename.$error.required" class="help-block text-danger">MiddleName must be required</p>
+            <p ng-show="signupform.middlename.$error.minlength" class="help-block text-danger"> Not lessthan 3 </p>
+            <p ng-show="signupform.middlename.$error.maxlength" class="help-block text-danger">Not Morethan 20</p>
+        </div>
+        <div class="form-group">
+            <label for="lastname">LastName <span class="text-danger">*</span></label>
+            <input type="text" name="lastname" class="form-control" ng-model="formObj.lastname" ng-minlength="3" ng-maxlength="10" placeholder="lastname" required />
+            <!-- validations -->
+            <p ng-show="signupform.lastname.$dirty && signupform.lastname.$error.required" class="help-block text-danger">LastName must be required</p>
+            <p ng-show="signupform.lastname.$error.minlength" class="help-block text-danger"> Not lessthan 3 </p>
+            <p ng-show="signupform.lastname.$error.maxlength" class="help-block text-danger">Not Morethan 20</p>
+        </div>
+        <div class="form-group">
+            <label for="username">UserName <span class="text-danger">*</span></label>
+            <input type="text" name="username" class="form-control" ng-model="formObj.username" ng-minlength="3" ng-maxlength="10" placeholder="username" required />
+            <!-- validations -->
+            <p ng-show="signupform.username.$dirty && signupform.username.$error.required" class="help-block text-danger">UserName must be required</p>
+            <p ng-show="signupform.username.$error.minlength" class="help-block text-danger"> Not lessthan 3 </p>
+            <p ng-show="signupform.username.$error.maxlength" class="help-block text-danger">Not Morethan 20</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password <span class="text-danger">*</span></label>
+            <input type="text" name="password" class="form-control" ng-model="formObj.password" ng-minlength="3" ng-maxlength="10" placeholder="password" required />
+            <!-- validations -->
+            <p ng-show="signupform.password.$dirty && signupform.password.$error.required" class="help-block text-danger">Password must be required</p>
+            <p ng-show="signupform.password.$error.minlength" class="help-block text-danger"> Not lessthan 3 </p>
+            <p ng-show="signupform.password.$error.maxlength" class="help-block text-danger">Not Morethan 20</p>
+        </div>
+        <div class="form-group">
+            <label for="confirmpassword">Confirm Password <span class="text-danger">*</span></label>
+            <input type="text" name="confirmpassword" class="form-control" ng-model="formObj.confirmpassword" ng-minlength="3" ng-maxlength="10" placeholder="confirm password" required />
+            <!-- validations -->
+            <p ng-show="signupform.confirmpassword.$dirty && signupform.confirmpassword.$error.required" class="help-block text-danger">Confirm Password must be required</p>
+            <p ng-show="signupform.confirmpassword.$error.minlength" class="help-block text-danger"> Above password should be same </p>
+            <p ng-show="signupform.confirmpassword.$error.maxlength" class="help-block text-danger">Above password should be same</p>
+        </div>
+        <div class="form-group">
+            <label for="email">Email <span class="text-danger">*</span></label>
+            <input type="text" name="email" class="form-control" ng-model="formObj.email" ng-minlength="3" ng-maxlength="10" placeholder="email" required />
+            <!-- validations -->
+            <p ng-show="signupform.email.$dirty && signupform.email.$error.required" class="help-block text-danger">Email must be required</p>
+            <p ng-show="signupform.email.$error.minlength" class="help-block text-danger"> Not lessthan 3 </p>
+            <p ng-show="signupform.email.$error.maxlength" class="help-block text-danger">Not morethan 20 </p>
+        </div>
+        <div class="form-group">
+            <label for="mobilenumber">Mobile No <span class="text-danger">*</span></label>
+            <input type="text" name="mobilenumber" class="form-control" ng-model="formObj.mobilenumber" ng-minlength="3" ng-maxlength="10" placeholder="Enter mobile number" required />
+            <!-- validations -->
+            <p ng-show="signupform.mobilenumber.$dirty && signupform.mobilenumber.$error.required" class="help-block text-danger">MobileNo required</p>
+        </div>
+        <div class="form-group dropdown">
+            <label for="country">Select Country <span class="text-danger">*</span></label>
+            <select class="form-control" name="country">
+                <option value="india">INDIA</option>
+                <option value="usa">USA</option>
+                <option value="uk">UK</option>
+                <option value="canada">CANADA</option>
+                <option value="singapoor">SINGAPOOR</option>
+            </select>
+            <p ng-show="signupform.country.$dirty && signupform.country.$error.required" class="help-block text-danger">Country name Should be selected </p>
+        </div>
+        <div class="form-group">
+            <label for="Gender">Gender <span class="text-danger">*</span>
+                <br>
+                <input type="radio" name="male" />
+                <label for="male">Male</label>
+                <input type="radio" name="female">
+                <label for="female">Female</label>
+            </label>
+            <!-- validations -->
+            <p ng-show="signupform.Gender.$error.required" class="help-block">Gender must be selected</p>
+        </div>
+        <div class="form-group">
+            <label for="comments">Comments <span class="text-danger">*</span></label>
+            <textarea class="form-control" cols="30" rows="5" ng-minlength="5" ng-maxlength="100" placeholder="Writting some here ..........." required></textarea>
+            <!-- validations -->
+            <p ng-show="signupform.comments.$error.required" class="help-block text-danger">Comments should be entered</p>
+            <p ng-show="signupform.comments.$error.minlength" class="help-block text-danger"> Not lessthan 5 </p>
+            <p ng-show="signupform.comments.$error.maxlength" class="help-block text-danger">Not Morethan 100</p>
+        </div>
+        <div class="form-group">
+            <label for="termsconditions">Terms & Conditions <span class="text-danger">*</span></label>
+            <input type="checkbox" name="termsconditions" required />
+            <p> (All the above fields are correct)</p>
+            <!-- validations -->
+            <p ng-show="signupform.termsconditions.$error.required" class="help-block text-danger">Checkbox must be selected</p>
+        </div>
+        <button type="submit" class="btn btn-success">Confirm</button>
+        <button type="submit" class="btn btn-info">Reset</button>
+    </form>
+</div>

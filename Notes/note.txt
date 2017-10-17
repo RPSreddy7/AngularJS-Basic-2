@@ -1,0 +1,45 @@
+1. module vs provider vs services vs factory 
+2. angularJS vs JQuery ?
+2.a : what is Dependency injection ?
+2.b what is the featues of ng?
+3.in case JQuery lekapothe ?
+4. what is the use of below one... these will be config function.
+  a. $stateProvider
+  b. $urlRouterProvider  : SPA ki (/Login... /Inbox.... /Trash .... similar to gmail)
+  c. $httpProvider  : dynamic calling the htmls or ajax calls or any files
+5. templateUrl vs template ? (templateUrl :: file path ::: template :: akkade tags rasukuntav)
+6.ng-show ng-hide ng-if difff ?
+
+
+.anni form elemnts cover cheyyu >>  dropdown check box radio text password 
+
+reg
+forget
+sign in 
+--
+
+validations 
+
+-------------------------------------------------------------------------------
+
+<h1> difference between ng-show ng hide ng-if</h1>
+<div ng-if="false">
+    ng-if : true :: html genarate kadhu.
+    ng-show : html untadhi but kanbadadhu
+    ng-hide : oppisit to ng-show
+</div>
+<div ng-show="false">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi expedita porro quaerat quis reprehenderit aut repudiandae fuga placeat dolorem velit, odio similique, aperiam, eum doloribus facilis illum ratione doloremque obcaecati!
+</div> 
+----------------------------------------------------------------------------------
+(function(){
+
+})()
+
+self invoke functions :: avaru call cheyyanavasadam ledhu.
+-----------------------------
+
+JS lo Url chnage cheyyadam 
+
+$state.go('Your state Name')   >>> Using state
+$location.url('')   >> 
