@@ -1,19 +1,17 @@
-(function(){
-	'use strict';
-	 myApp.constant('appConfiguration', {
-	 	signIn:'/SignIn',
-	 	signInState:'SignInState',
+(function() {
+    'use strict';
+    myApp.constant('appConfiguration', {
+        signIn: '/SignIn',
+        signInState: 'SignInState',
+        templatePath: './templates/',
+        register: '/Registration',
+        registerState: 'RegisterState',
 
-	 	templatePath:'./templates/',
+        forget: '/ForgetPassword',
+        forgetState: 'ForgetPasswordState',
 
-	 	register:'/Registration',
-	 	registerState:'RegisterState',
-	 	
-	 	forget:'/ForgetPassword',
-	 	forgetState:'ForgetPasswordState',
-
-	 	dashboardState:'DSState',
-	 	dashboardUrl:'/Dashboard'
-	 	
-	 })
+        dashboardState: 'DSState',
+        dashboardUrl: '/Dashboard',
+        prasadRestApiURL:"https://jsonplaceholder.typicode.com/"
+    })
 })()

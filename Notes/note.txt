@@ -10,17 +10,13 @@
 5. templateUrl vs template ? (templateUrl :: file path ::: template :: akkade tags rasukuntav)
 6.ng-show ng-hide ng-if difff ?
 
-
-.anni form elemnts cover cheyyu >>  dropdown check box radio text password 
-
-reg
-forget
-sign in 
---
-
-validations 
+7. create validations using Angular JS
 
 -------------------------------------------------------------------------------
+XML --->> Application Data storing purpose.
+HTML --->> That data displayed on frontend view part on the application.
+
+
 
 <h1> difference between ng-show ng hide ng-if</h1>
 <div ng-if="false">
@@ -37,9 +33,33 @@ validations
 })()
 
 self invoke functions :: avaru call cheyyanavasadam ledhu.
------------------------------
+----------------------------------------------------------------------------------
 
-JS lo Url chnage cheyyadam 
+Any JS  or  ctrl Js file lo Url change cheyyadam kosam below statement use chestham. 
 
 $state.go('Your state Name')   >>> Using state
 $location.url('')   >> 
+--------------------------------------------------------------------------------
+
+-------------- learning AJAX concepts ---------------------------------------
+
+1. leaning AJAX (Asyncharous Javascript And Xml)
+2. without reloading/submiting the form we can get the data from the server(db)
+3. http calls are 4 types 1. GET 2. POST 3. DELETE 4.PUT
+ 		below are the http requests:
+
+ 			GET : pulling the data only (select * from emp)
+ 			POST :creating the data(Create Table <Table name> insert values .....)
+ 			DELETE : delete the record
+			PUT : updating the record (update Query ...... unna record ni modify or update)
+
+		------ Useful Links for AJAX topic -------
+     http://techfunda.com/howto/576/http-delete-server-request
+     https://jsonplaceholder.typicode.com/
+
+		---- Main few topics in AJAX -----------
+
+1. get vs post 
+2. promise 
+3. deffer 
+4. ajax 

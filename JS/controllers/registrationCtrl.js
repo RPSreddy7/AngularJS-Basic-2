@@ -1,10 +1,10 @@
 (function() {
     'use strict';
-    myApp.controller('registrationCtrl', ['$scope','prasadService','prasadFactory', registrationCtrlFunc]);
+    myApp.controller('registrationCtrl', ['$scope','prasadService','ajaxFactory', registrationCtrlFunc]);
 
-    function registrationCtrlFunc($scope,prasadService,prasadFactory) {
+    function registrationCtrlFunc($scope,prasadService,ajaxFactory) {
         $scope.title = "User Registraion Page";
         console.log(prasadService.loggedinUser);
-        console.log('regista >>>>>> ', prasadFactory.loggedinPassword);
+        console.log('regista >>>>>> ', ajaxFactory.loggedinPassword);
     }
 })()

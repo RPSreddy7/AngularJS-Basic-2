@@ -7,7 +7,7 @@
 
  1. app.js lo 
    a. config   functions chusthadhi >> (routers rastham)
-   b. run function chusthadhi (app load inappudu adhina global variables set chettyali ante )
+   b. run function chusthadhi (app load inappudu adhina global variables set cheyali ante )
  2. 'xyx'  >> function params kuda same order same names reasons >> minifications inappudu recogni
 
 */
