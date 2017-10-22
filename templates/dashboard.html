@@ -1,12 +1,38 @@
 <div>
-	<p>leaning AJAX (Asyncharous Javascript And Xml)</p>
-	<p>1. without reloading/submiting the form we can get the data from the server(db)</p>
-	<p>http call are 4 types 1. GET 2. POST 3. DELETE 4.PUT</p>
-	<p> below are the http requests </p>
-	<p>GET : pulling the data only (select * from emp)</p>
-	<p>POST :creating the data(Create Table <Table name> inset values .....) </p>
-	<p>DELETE : delete the record</p>
-	<p>PUT : updating the record (update Query ...... unna record ni modifify or update)</p>
-	<p>http://techfunda.com/howto/576/http-delete-server-request</p>
-	<p>https://jsonplaceholder.typicode.com/</p>
+    <p>List of posts</p>
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th ng-repeat="(key, value) in postsDataSource[0]" class="text-capitalize">{{key}}</th>
+            </tr>
+            <tr ng-repeat="(key, value) in postsDataSource | limitTo:5 ">
+                <td ng-repeat="(innerKey, innerValue) in value ">
+                    <div ng-show="(innerKey == 'userId')">
+                        <input type="checkbox">
+                    </div>
+                    <div ng-show="(innerKey != 'userId')">
+                        {{innerValue}}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <button class="btn btn-success" ng-click="saveData()">{{saveButton}}</button>
+        <!-- <button class="btn btn-success" ng-click="canceldata()">{{CancelButton}}</button> -->
+        <button class="btn btn-success" ng-click="delData()">{{deleteButton}}</button>
+        <button class="btn btn-success">{{updateButton}}</button>
+    </div>
 </div>
+<script type="text/ng-template" id="postsdata.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">{{title}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <div>dsdsdsdsd</div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

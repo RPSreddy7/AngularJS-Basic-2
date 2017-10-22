@@ -15,7 +15,6 @@ var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessage
 (function() {
     'use strict';
 
-
     myApp.config(['$stateProvider', '$urlRouterProvider', '$compileProvider', '$httpProvider', 'appConfiguration', myConfigFn]);
 
     function myConfigFn($stateProvider, $urlRouterProvider, $compileProvider, $httpProvider, appConfiguration) {
@@ -43,6 +42,11 @@ var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessage
                 url: appConfiguration.dashboardUrl,
                 templateUrl: appConfiguration.templatePath + 'dashboard.html',
                 controller: 'dashCtrl'           
+            })
+            .state(appConfiguration.dashboardImageState,{
+                url: appConfiguration.dashboardImageUrl,
+                templateUrl: appConfiguration.templatePath + 'dashboardimagechange.html',
+                controller: 'dashboardimagechangeCtrl'           
             });
     }
 

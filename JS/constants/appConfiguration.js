@@ -12,6 +12,10 @@
 
         dashboardState: 'DSState',
         dashboardUrl: '/Dashboard',
+
+        dashboardImageState:'DashImg',
+        dashboardImageUrl: '/DashImgUrl',
+        
         prasadRestApiURL:"https://jsonplaceholder.typicode.com/"
     })
 })()

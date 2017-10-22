@@ -3,9 +3,17 @@
 
     myApp.factory('ajaxFactory', ['$q', '$http', myFunName]);
 
+
+
     function myFunName($q, $http) {
 
         var apiJSONFile = '/data/data.json'; //'/api/Planogram/Get/';
+
+        var objfact = {};
+
+        objfact.loggedinPassword = "";
+
+
 
         // functions definition
         var methods = {};
@@ -13,7 +21,9 @@
         methods['postRequestApi'] = postRequestApiFunc;
         methods['putRequestApi'] = putRequestApiFunc;
         methods['deleteRequestApi'] = deleteRequestApiFunc
+        return methods;
 
+        
         // functions impelemetation
 
         function getRequestApiFunc(url, data) {
@@ -67,6 +77,6 @@
 
             return deferred.promise;
         }
-        return methods;
+        
     }
 })()

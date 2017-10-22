@@ -1,55 +1,84 @@
 (function() {
     'use strict';
-    myApp.controller('dashCtrl', ['$scope', 'prasadService', 'ajaxFactory', '$rootScope', 'appConfiguration', dashCtrlFunc]);
+    myApp.controller('dashCtrl', ['$scope', 'prasadService', 'ajaxFactory', '$rootScope', 'appConfiguration', '$uibModal', dashCtrlFunc]);
 
-    function dashCtrlFunc($scope, prasadService, ajaxFactory, $rootScope, appConfiguration) {
+    function dashCtrlFunc($scope, prasadService, ajaxFactory, $rootScope, appConfiguration, $uibModal) {
 
-        let rootUrl = appConfiguration.prasadRestApiURL; // (Let or where meaning, Let using in ECMA script)
-        console.log(ajaxFactory)
-        // get  exmple
-        var promiseObj = ajaxFactory.getRequestApi(rootUrl + 'posts/10', {});
-        promiseObj.then(function(data) {
-            console.log(data);
-        });
-        promiseObj.catch(function(prasad) {
-            console.error(prasad);
-        });
-        promiseObj.finally(function(d) {
-            console.log('finally block executed : promiseObj', d);
-        });
+        // variables
+        $scope.saveButton = "New";
+        $scope.deleteButton = "Delete";
+        $scope.updateButton = "Edit";
+        $scope.CancelButton = "Cancel";
+        $scope.postsDataSource = [];
 
-        // post exmple
-        // 1. body lo data ni pamstham ... size unlimite  
-        var promisePostObj = ajaxFactory.postRequestApi(rootUrl + 'posts', {
-            title: 'foo',
-            body: 'bar',
-            userId: 1
-        });
-        promisePostObj.then(function(data) {
-            console.log(data);
-        });
-        promisePostObj.catch(function(prasad) {
-            console.error(prasad);
-        });
-        // promisePostObj.finally(function(d) {
-        //     console.log('finally block executed : promisePostObj', d);
-        // });
+        // functions definitions
+        $scope.getPosts = getPostFunc;
+        $scope.saveData = saveDataFunc;
+        $scope.delData = deleteButtonFunc;
+        $scope.openDialog = openDialogFun;
+      
 
 
-        // $scope.uservalue = "";
-        // $scope.uservalue1 = "";
-        // $scope.imgUrl = "https://starsunfolded-1ygkv60km.netdna-ssl.com/wp-content/uploads/2015/12/Pawan-Kalyan.jpg";
 
 
-        // $scope.$watchGroup(['uservalue', 'uservalue1'], function(n, o) {
-        //     console.log(n, o);
-        //     if (o != n) {
-        //         if ($scope.imgUrl.indexOf('Pawan-Kalyan.jpg') > 0) {
-        //             $scope.imgUrl = "https://cdn.worldvectorlogo.com/logos/angular-3.svg";
-        //         } else {
-        //             $scope.imgUrl = "https://starsunfolded-1ygkv60km.netdna-ssl.com/wp-content/uploads/2015/12/Pawan-Kalyan.jpg";
-        //         }
-        //     }
-        // });
+        // function implementations
+        function getPostFunc() {
+            let rootUrl = appConfiguration.prasadRestApiURL; // (Let or where meaning same, Let using in ECMA script)
+
+            // get  exmple
+            var promiseObj = ajaxFactory.getRequestApi(rootUrl + 'posts', {});
+            promiseObj.then(function(data) {
+                $scope.postsDataSource = data;
+            });
+            promiseObj.catch(function(prasad) {
+                console.error(prasad);
+            });
+            promiseObj.finally(function(d) {
+                console.log('finally block executed : promiseObj', d);
+            });
+        }
+
+        function saveDataFunc() {
+            console.log("save function called ");
+            $scope.openDialog();
+        }
+
+        function cancelFunc() {
+            console.log("cancel function called ");
+            $scope.canceldata();
+        }
+         function deleteButtonFunc() {
+            console.log("delete function called ");
+            
+        }
+
+        function openDialogFun() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'postsdata.html',
+                controller: 'ModalInstanceCtrl'
+            });
+        }
+        //while loading the page 
+        $scope.getPosts();
+        
     }
-})()
+
+
+
+
+    myApp.controller('ModalInstanceCtrl', function($scope, $uibModalInstance) {
+
+        $scope.title = "Create Record"
+
+        $scope.ok = function() {
+            console.log('ok called ')
+            $uibModalInstance.dismiss('cancel');
+        };
+
+        $scope.cancel = function() {
+            console.log('cancel called ')
+            $uibModalInstance.dismiss('cancel');
+        };
+    });
+})();
