@@ -1,5 +1,5 @@
 (function() {
-    'use strict'
+    'use strict';
 
     myApp.factory('ajaxFactory', ['$q', '$http', myFunName]);
 
@@ -20,7 +20,7 @@
         methods['getRequestApi'] = getRequestApiFunc;
         methods['postRequestApi'] = postRequestApiFunc;
         methods['putRequestApi'] = putRequestApiFunc;
-        methods['deleteRequestApi'] = deleteRequestApiFunc
+        methods['deleteRequestApi'] = deleteRequestApiFunc;
         return methods;
 
         

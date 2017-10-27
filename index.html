@@ -4,46 +4,43 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AngularJS Basic</title>
+    <title>AngularJS-Basic-2</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/main.css">
-       <!--  libs -->
+    <!--  libs -->
     <script src="./JS/Lib/jquery.min.js"></script>
     <script src="./JS/Lib/bootstrap.min.js"></script>
     <script src="./JS/Lib/angular.min.js"></script>
     <script src="./JS/Lib/angular-route.min.js"></script>
     <script src="./JS/Lib/ui-bootstrap-tpls-0.14.3.min.js"></script>
-    <script src="./JS/Lib/angular-messages.min.js"></script>  
-            <!-- module & config js file -->  
+    <script src="./JS/Lib/angular-messages.min.js"></script>
+    <!-- module & config js file -->
     <script src="app.js"></script>
-
     <!-- Constants (states,templatePath, etc) names file-->
     <script src="./JS/constants/appConfiguration.js"></script>
     <!-- Controllers -->
     <script src="./JS/controllers/signInCtrl.js"></script>
     <script src="./JS/controllers/registrationCtrl.js"></script>
     <script src="./JS/controllers/forgetpasswordCtrl.js"></script>
-    <script src="./JS/controllers/dashboardCtrl.js"></script> 
-    <script src="./JS/controllers/dashboardimagechangeCtrl.js"></script>    
+    <script src="./JS/controllers/dashboardimagechangeCtrl.js"></script>
+    <script src="./JS/controllers/dashboardCtrl.js"></script>
+    <script src="./JS/controllers/allModalDialogBoxCtrl.js"></script>
     <!--  Services -->
     <script src="./JS/service/myService.js"></script>
     <!-- Factories -->
-    <script src="./JS/factory/myfactory.js"></script>    
+    <script src="./JS/factory/myfactory.js"></script>
     <!-- Directives -->
-
 </head>
 
 <body>
     <!-- ng-app is parent scope or root scope -->
     <div class="container" ng-app="prasadApp">
-        <!-- ui-view : this is a SPA >> dynamicallly load the diffrent HTMLS Ex : login.html.... inbox.html...dashboard.html -->
+        <!-- ui-view : this is a SPA >> dynamicallly load the different HTMLS Ex : login.html.... inbox.html...dashboard.html -->
         <ui-view></ui-view>
+        <div class="bar" ng-show="showProcessing"> Loading... </div>
     </div>
-    <!-- <div>
-       In this div with out angular, Ex ng-model ng-bind these directives won't work
-    </div> -->
- </body>
+</body>
 
 </html>

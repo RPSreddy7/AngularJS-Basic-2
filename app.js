@@ -1,14 +1,14 @@
 /*
- []  : adhina third party libary use chesuko danaki
+ []  : yedhaina third party libary use chesuko daaki
 
- Module : it is a packaging of (ctrls/services/factory/directives)
+ Module : it is a packageing of (ctrls/services/factory/directives)
 
  angular loading starting point is app.js 
 
  1. app.js lo 
-   a. config   functions chusthadhi >> (routers rastham)
+   a. config functions chusthadhi routing system process-->> (routers rastham)
    b. run function chusthadhi (app load inappudu adhina global variables set cheyali ante )
- 2. 'xyx'  >> function params kuda same order same names reasons >> minifications inappudu recogni
+ 2. 'xyz'  >> function params kuda same order same names--->>reason >> minifications inappudu recognize.
 
 */
 var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessages']);
@@ -53,7 +53,7 @@ var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessage
     myApp.run(['$rootScope', myRunFn]);
 
     function myRunFn($rootScope) {
-        $rootScope.showProcessing = false;
+        $rootScope.showProcessing = true;
         $rootScope.Loggin = "";
     }
 

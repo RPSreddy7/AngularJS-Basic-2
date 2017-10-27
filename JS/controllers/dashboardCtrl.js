@@ -5,80 +5,91 @@
     function dashCtrlFunc($scope, prasadService, ajaxFactory, $rootScope, appConfiguration, $uibModal) {
 
         // variables
-        $scope.saveButton = "New";
+        $scope.newButton = "New";
+        $scope.editButton = "Edit";
         $scope.deleteButton = "Delete";
-        $scope.updateButton = "Edit";
-        $scope.CancelButton = "Cancel";
+
+        // create array 
         $scope.postsDataSource = [];
+        $scope.checkedDataSource = [];
 
         // functions definitions
-        $scope.getPosts = getPostFunc;
-        $scope.saveData = saveDataFunc;
-        $scope.delData = deleteButtonFunc;
-        $scope.openDialog = openDialogFun;
-      
-
-
-
+        $scope.getPostsData = getPostsDataFunc;
+        $scope.newData = newDataFunc;
+        $scope.editData = editDataFunc;
+        $scope.delData = delDataFunc;
+        $scope.storeCheckData = storeCheckDataFunc;
 
         // function implementations
-        function getPostFunc() {
+        function getPostsDataFunc() {
+            $rootScope.showProcessing = true;
             let rootUrl = appConfiguration.prasadRestApiURL; // (Let or where meaning same, Let using in ECMA script)
 
             // get  exmple
             var promiseObj = ajaxFactory.getRequestApi(rootUrl + 'posts', {});
             promiseObj.then(function(data) {
                 $scope.postsDataSource = data;
+                $rootScope.showProcessing = false
             });
             promiseObj.catch(function(prasad) {
                 console.error(prasad);
             });
             promiseObj.finally(function(d) {
-                console.log('finally block executed : promiseObj', d);
+                console.log('finally block executed : promiseOb', d);
             });
         }
 
-        function saveDataFunc() {
-            console.log("save function called ");
-            $scope.openDialog();
-        }
+        $scope.getPostsData();
 
-        function cancelFunc() {
-            console.log("cancel function called ");
-            $scope.canceldata();
-        }
-         function deleteButtonFunc() {
-            console.log("delete function called ");
-            
-        }
 
-        function openDialogFun() {
+        function newDataFunc() {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: 'postsdata.html',
-                controller: 'ModalInstanceCtrl'
+                templateUrl: appConfiguration.templatePath + 'allModalDialogBox.html',
+                controller: 'allModalDialogBoxCtrl',
+                resolve: {
+                    paramDS: function() {
+                        return $scope.checkedDataSource;
+                    }
+                }
             });
+            console.log("new button function called ");
         }
-        //while loading the page 
-        $scope.getPosts();
+
+        function editDataFunc() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: appConfiguration.templatePath + 'allModalDialogBox.html',
+                controller: 'allModalDialogBoxCtrl',
+                resolve: {
+                    paramDS: function() {
+                        return $scope.checkedDataSource;
+                    }
+                }
+            });
+            console.log("edit button function called ");
+        }
+
+        function delDataFunc() {
+            console.log("delete button function called ");
+        }
+
+        function storeCheckDataFunc(data) {
+            if (data.selected) {
+                $scope.checkedDataSource.push(data);
+            } else {
+                for (var i = 0; i < $scope.checkedDataSource.length; i++) {
+                    var obj = $scope.checkedDataSource[i];
+                    if (obj.id == data.id) {
+                        $scope.checkedDataSource.splice(i, 1);
+                    }
+                }
+            }
+            console.log($scope.checkedDataSource);
+        }
+
         
     }
 
 
-
-
-    myApp.controller('ModalInstanceCtrl', function($scope, $uibModalInstance) {
-
-        $scope.title = "Create Record"
-
-        $scope.ok = function() {
-            console.log('ok called ')
-            $uibModalInstance.dismiss('cancel');
-        };
-
-        $scope.cancel = function() {
-            console.log('cancel called ')
-            $uibModalInstance.dismiss('cancel');
-        };
-    });
 })();

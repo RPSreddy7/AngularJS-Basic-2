@@ -1,11 +1,12 @@
 (function() {
     'use strict';
-    myApp.controller('signInCtrl', ['$scope','prasadService','$state','appConfiguration','ajaxFactory', signInCtrlFunc]);
+    myApp.controller('signInCtrl', ['$rootScope','$scope','prasadService','$state','appConfiguration','ajaxFactory', signInCtrlFunc]);
 
-    function signInCtrlFunc($scope,prasadService,$state,appConfiguration,ajaxFactory) {
+    function signInCtrlFunc($rootScope,$scope,prasadService,$state,appConfiguration,ajaxFactory) {
         
         $scope.formObj = {};
         $scope.title = "SignIn Page";
+        $rootScope.showProcessing = false;
 
         $scope.save = function(isValid){
         	if(isValid){

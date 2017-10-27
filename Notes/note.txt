@@ -34,7 +34,21 @@ HTML --->> That data displayed on frontend view part on the application.
 
 self invoke functions :: avaru call cheyyanavasadam ledhu.
 ----------------------------------------------------------------------------------
+--------------------------app.js file instruction steps--------------------------
+/*
+ []  : yedhaina third party libary use chesuko daaki
 
+ Module : it is a packageing of (ctrls/services/factory/directives)
+
+ angular loading starting point is app.js 
+
+ 1. app.js lo 
+   a. config functions chusthadhi routing system process-->> (routers rastham)
+   b. run function chusthadhi (app load inappudu adhina global variables set cheyali ante )
+ 2. 'xyz'  >> function params kuda same order same names--->>reason >> minifications inappudu recognize.
+
+*/
+------------------------------------------------------------------------------------
 Any JS  or  ctrl Js file lo Url change cheyyadam kosam below statement use chestham. 
 
 $state.go('Your state Name')   >>> Using state
