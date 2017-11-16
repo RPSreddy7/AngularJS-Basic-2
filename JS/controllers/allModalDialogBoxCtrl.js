@@ -5,7 +5,7 @@ myApp.controller('allModalDialogBoxCtrl', function($scope, $uibModalInstance, pa
     console.log(paramDS);
     $scope.ok = function() {
         console.log('ok button called ')
-        $uibModalInstance.dismiss('cancel');
+        $uibModalInstance.dismiss($scope.selectedDS[3]);
     };
 
     $scope.cancel = function() {

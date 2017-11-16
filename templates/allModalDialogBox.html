@@ -11,9 +11,9 @@
                 <div ng-show="(innerKey == 'userId')">
                     <input type="checkbox">
                 </div>
-                <div ng-show="(innerKey != 'userId')">
-                    {{innerValue}}
-                </div>
+                <textarea ng- model="innerValue" ng-show="(innerKey != 'userId')" cols="50" rows="10">
+                 <!--    {{innerValue}} -->
+                </textarea>
             </td>
         </tr>
     </table>

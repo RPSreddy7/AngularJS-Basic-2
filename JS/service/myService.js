@@ -6,8 +6,8 @@
 	function myFunName(){
 
 	  this.loggedinUser ="";
-	  this.add = function(){
-	  	
+	  this.loggedinUserage =25;
+	  this.add = function(){	  	
 	  }
 
 	}

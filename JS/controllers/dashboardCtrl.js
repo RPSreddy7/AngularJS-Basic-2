@@ -20,14 +20,17 @@
         $scope.delData = delDataFunc;
         $scope.storeCheckData = storeCheckDataFunc;
 
+        $rootScope.showProcessing = true;
         // function implementations
         function getPostsDataFunc() {
-            $rootScope.showProcessing = true;
+
             let rootUrl = appConfiguration.prasadRestApiURL; // (Let or where meaning same, Let using in ECMA script)
 
             // get  exmple
             var promiseObj = ajaxFactory.getRequestApi(rootUrl + 'posts', {});
+              
             promiseObj.then(function(data) {
+
                 $scope.postsDataSource = data;
                 $rootScope.showProcessing = false
             });
@@ -67,10 +70,12 @@
                     }
                 }
             });
+
             console.log("edit button function called ");
         }
 
         function delDataFunc() {
+
             console.log("delete button function called ");
         }
 
@@ -88,7 +93,7 @@
             console.log($scope.checkedDataSource);
         }
 
-        
+
     }
 
 

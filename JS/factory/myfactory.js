@@ -9,14 +9,11 @@
 
         var apiJSONFile = '/data/data.json'; //'/api/Planogram/Get/';
 
-        var objfact = {};
-
-        objfact.loggedinPassword = "";
-
-
-
         // functions definition
         var methods = {};
+        
+        methods['loggedinPassword'] = "";
+        methods['loggedinGender'] = "male";       
         methods['getRequestApi'] = getRequestApiFunc;
         methods['postRequestApi'] = postRequestApiFunc;
         methods['putRequestApi'] = putRequestApiFunc;
@@ -29,7 +26,8 @@
         function getRequestApiFunc(url, data) {
             var deferred = $q.defer();
             $http.get(url, data)
-                .success(function(data, status, headers, config) {
+                   .success(function(data, status, headers, config) {
+                   
                     deferred.resolve(data);
                 })
                 .error(function(data, status, headers, config) {

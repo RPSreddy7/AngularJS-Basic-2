@@ -26,11 +26,14 @@
     <script src="./JS/controllers/dashboardimagechangeCtrl.js"></script>
     <script src="./JS/controllers/dashboardCtrl.js"></script>
     <script src="./JS/controllers/allModalDialogBoxCtrl.js"></script>
+    <script src="./JS/controllers/directiveUrlCtrl.js"></script>
+    
     <!--  Services -->
     <script src="./JS/service/myService.js"></script>
     <!-- Factories -->
     <script src="./JS/factory/myfactory.js"></script>
     <!-- Directives -->
+    <script src="./JS/directives/dashdirective.js"></script>
 </head>
 <body>
     <!-- ng-app is parent scope or root scope -->
@@ -38,6 +41,11 @@
         <!-- ui-view : this is a SPA >> dynamicallly load the different HTMLS Ex : login.html.... inbox.html...dashboard.html -->
         <ui-view></ui-view>
         <div class="bar" ng-show="showProcessing"> Loading... </div>
+
+        <div ng-if="false">ravindra</div>
+        <div ng-show="false">ravindra ng-show</div>
+         <div ng-hide="true">ravindra ng-hide</div>
     </div>
+
 </body>
 </html>

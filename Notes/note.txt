@@ -77,3 +77,8 @@ $location.url('')   >>
 2. promise 
 3. deffer 
 4. ajax 
+
+
+1. how many ng-app we can write in our appliction ?
+a> as many as you can 
+https://stackoverflow.com/questions/18571301/angularjs-multiple-ng-app-within-a-page

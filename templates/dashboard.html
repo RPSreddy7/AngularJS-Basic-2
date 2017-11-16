@@ -1,4 +1,9 @@
 <div>
+
+	<dash-Directive></dash-Directive> 	<!--This is Element or tag directive, define restrict : "E" -->
+	<div dash-Directive></div>			<!--This is Attribute directive, define restrict : "A" -->
+	<div class="dash-Directive"></div>	<!--This is Class directive, define restrict : "C" -->
+										<!--The above all types of directives not working on that time, define restrict : "M" (M : mean comment for all directives)-->
     <p>List of posts</p>
     <div class="row">
         <table class="table">
@@ -20,6 +25,8 @@
     <div class="row">        
         <button class="btn btn-success" ng-click="newData()">{{newButton}}</button>
         <button class="btn btn-success" ng-click="editData()">{{editButton}}</button>
-        <button class="btn btn-success" ng-click="delData()">{{deleteButton}}</button>
+        <button class="btn btn-success" ng-click="delData(value)">{{deleteButton}}</button>
     </div>
+
+
 </div>

@@ -6,16 +6,17 @@
         templatePath: './templates/',
         register: '/Registration',
         registerState: 'RegisterState',
-
         forget: '/ForgetPassword',
         forgetState: 'ForgetPasswordState',
 
         dashboardState: 'DSState',
         dashboardUrl: '/Dashboard',
 
-        dashboardImageState:'DashImg',
+        dashboardImageState: 'DashImg',
         dashboardImageUrl: '/DashImgUrl',
-        
-        prasadRestApiURL:"https://jsonplaceholder.typicode.com/"
+        directiveState: 'directiveDemo',
+        directiveDemoBrowser: '/learning-directive',
+
+        prasadRestApiURL: "https://jsonplaceholder.typicode.com/"
     })
 })()

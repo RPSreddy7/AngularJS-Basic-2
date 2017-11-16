@@ -19,8 +19,8 @@ var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessage
 
     function myConfigFn($stateProvider, $urlRouterProvider, $compileProvider, $httpProvider, appConfiguration) {
         // default that means without any route
-        $urlRouterProvider.when('', appConfiguration.signIn);
-        $urlRouterProvider.otherwise(appConfiguration.signIn);
+        $urlRouterProvider.when('', appConfiguration.directiveDemoBrowser);
+        $urlRouterProvider.otherwise(appConfiguration.directiveDemoBrowser);
 
         $stateProvider
             .state(appConfiguration.signInState, {
@@ -41,12 +41,17 @@ var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessage
             .state(appConfiguration.dashboardState, {
                 url: appConfiguration.dashboardUrl,
                 templateUrl: appConfiguration.templatePath + 'dashboard.html',
-                controller: 'dashCtrl'           
+                controller: 'dashCtrl'
             })
-            .state(appConfiguration.dashboardImageState,{
+            .state(appConfiguration.dashboardImageState, {
                 url: appConfiguration.dashboardImageUrl,
                 templateUrl: appConfiguration.templatePath + 'dashboardimagechange.html',
-                controller: 'dashboardimagechangeCtrl'           
+                controller: 'dashboardimagechangeCtrl'
+            })
+            .state(appConfiguration.directiveState, {
+                url: appConfiguration.directiveDemoBrowser,
+                templateUrl: appConfiguration.templatePath + 'directiveUrl.html',
+                controller: 'directiveUrl'
             });
     }
 
@@ -55,6 +60,7 @@ var myApp = angular.module('prasadApp', ['ui.router', 'ui.bootstrap', 'ngMessage
     function myRunFn($rootScope) {
         $rootScope.showProcessing = true;
         $rootScope.Loggin = "";
+        $rootScope.logginUser = "Ravindra";
     }
 
 })();
