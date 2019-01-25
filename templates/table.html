@@ -1,0 +1,15 @@
+<div>
+    <div>
+    	<label for=""> i am in directive </label>
+        <input type="text" ng-model="usercity"> 
+        <input type="text" ng-model="mygender">
+    </div>
+    <div class="table-border" ng-repeat="(key, value) in data">
+        <table class="table">
+            <tr ng-repeat="(ravi, prasad) in value">
+                <td>{{ravi | uppercase}} </td>
+                <td>{{prasad}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="col-md-6 col-md-offset-3">
+    <h3>{{title}}</h3>
+    <br>
+    <form name="loginForm" role="form" novalidate>
+        <div class="form-group">
+            <label for="username">Username <span class="text-danger">*</span></label>
+            <input type="text" name="signData" class="form-control" ng-model="formObj.signinName" ng-minlength="3" ng-maxlength="10" autocomplete="off" required />
+            <p ng-show="loginForm.signData.$dirty && loginForm.signData.$error.required" class="help-block text-danger"> username is required</p>
+            <p ng-show="loginForm.signData.$error.minlength" class="help-block text-danger"> username is short</p>
+            <p ng-show="loginForm.signData.$error.maxlength" class="help-block text-danger">username is very long</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password <span class="text-danger">*</span></label>
+            <input type="password" name="password" class="form-control" ng-model="formObj.passwordStr" ng-minlength="3" ng-maxlength="8" required/>
+            <p ng-show="loginForm.password.$dirty && loginForm.password.$error.required" class="help-block text-danger"> password is required</p>
+            <p ng-show="loginForm.password.$error.minlength" class="help-block text-danger">password is short</p>
+            <p ng-show="loginForm.password.$error.maxlength" class="help-block text-danger">password is very long</p>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary" ng-click="save(loginForm.$valid)">Login</button>
+            
+        </div>           
+    </form>
+</div>

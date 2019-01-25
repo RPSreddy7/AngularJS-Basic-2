@@ -1,0 +1,32 @@
+<div>
+
+	<dash-Directive></dash-Directive> 	<!--This is Element or tag directive, define restrict : "E" -->
+	<div dash-Directive></div>			<!--This is Attribute directive, define restrict : "A" -->
+	<div class="dash-Directive"></div>	<!--This is Class directive, define restrict : "C" -->
+										<!--The above all types of directives not working on that time, define restrict : "M" (M : mean comment for all directives)-->
+    <p>List of posts</p>
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th ng-repeat="(key, value) in postsDataSource[0]" class="text-capitalize">{{key}}</th>
+            </tr>
+            <tr ng-repeat="(key, value) in postsDataSource | limitTo:5">
+                <td ng-repeat="(innerKey, innerValue) in value">
+                    <div ng-show="(innerKey == 'userId')">
+                        <input type="checkbox" ng-model="value.selected" ng-click="storeCheckData(value,value.selected)">
+                    </div>
+                    <div ng-show="(innerKey != 'userId')">
+                        {{innerValue}}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">        
+        <button class="btn btn-success" ng-click="newData()">{{newButton}}</button>
+        <button class="btn btn-success" ng-click="editData()">{{editButton}}</button>
+        <button class="btn btn-success" ng-click="delData(value)">{{deleteButton}}</button>
+    </div>
+
+
+</div>

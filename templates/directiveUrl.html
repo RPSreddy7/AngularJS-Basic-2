@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="pull-right">{{logginUser}} - {{userCity}} - {{localage}} - {{gender}}</div>
+    <div>
+        <table-directive mygender="gender" usercity="userCity" mydata="{{empDS}}"></table-directive>
+    </div>
+    <div>
+    	<label for=""> i am in contoller </label>
+        <input type="text" ng-model="userCity">
+        <input type="text" id="test" ng-model="gender">
+    </div>
+</div>

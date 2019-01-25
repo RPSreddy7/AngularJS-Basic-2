@@ -1,0 +1,64 @@
+
+1. leaning AJAX (Asynchronous Javascript And Xml)
+2. without reloading/submiting the form we can get the data from the server(db)
+3. http calls are 4 types 1. GET 2. POST 3. DELETE 4.PUT
+
+ 		below are the http requests:
+ 			GET : pulling the data only (select * from emp)
+ 			POST :creating the data(Create Table <Table name> insert values .....)
+ 			DELETE : delete the record
+			PUT : updating the record (update Query ...... unna record ni modify or update)
+
+		------ Useful Links for AJAX topic -------
+     http://techfunda.com/howto/576/http-delete-server-request
+     https://jsonplaceholder.typicode.com/
+
+		---- Main few topics in AJAX -----------
+
+1. get vs post 
+2. promise 
+3. defer 
+4. ajax 
+-----------------------------------------------------------
+1. get http request
+
+a. it will append the data in the "http header"
+b. data send to the server will be limited 2k
+c. data will pass as "query string" exmple
+<root url >   ?username=dff&password=ggfg
+
+syntax :   ?key=value&key=value&key=value
+
+
+2. post (It is secure, why because cannot show the key & value on the browser http url link. 
+					Ex: username = prasad && password=password
+		    (http body lo data ni pampistham ... size unlimited  Ex: username = prasad && password=password)
+		 
+      
+1. unlimited data we send to the server
+2. i will go throw http boby
+3. it will send as object string
+
+
+1. we need to create XMLHttprequest object
+2. this  object will create based on browser type 
+  
+   IE :  activeXobject('micro')
+   Webkit /: new XMLHttprequest(); 
+
+
+   var obj = new XMLHttprequest();
+3. we have 3 methods in XMLHttprequest obj
+
+open :  it has 3 paramaeters
+     param1 : methodName Ex : get/post/put/delete
+     param2 : url    :: api url
+     param3 : true/false : 
+     true  : it will excuste remianing scripts 
+     false : response vachentha varaku wait cheyyadam.
+send : sending ur request to the server 
+
+onreadystatechange :
+    a. ni request status nuvvu theluskovahhu
+    b. response : 
+
